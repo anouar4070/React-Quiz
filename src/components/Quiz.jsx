@@ -1,9 +1,6 @@
 import { useState, useCallback } from "react";
 
 import QUESTIONS from "../questions";
-import quizCompleteImg from "../assets/quiz-complete.png";
-import QuestionTimer from "./QuestionTimer";
-import Answers from "./Answers";
 import Question from "./Question";
 
 export default function Quiz() {
@@ -28,10 +25,7 @@ export default function Quiz() {
 
   if (quizIsComplete) {
     return (
-      <div id="summary">
-        <h2>Quiz Completed!</h2>
-        <img src={quizCompleteImg} alt="Trophy icon" />
-      </div>
+     
     );
   }
   // Only shuffle answers if the quiz is not complete
