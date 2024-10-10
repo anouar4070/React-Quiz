@@ -20,6 +20,7 @@ export default function Quiz() {
   },
   []);
 
+  //When a timeout occurs, it will trigger handleSkipAnswer, which will then call handleSelectAnswer(null) to mark the question as skipped by adding null to the list of answers.
   const handleSkipAnswer = useCallback(
     () => handleSelectAnswer(null),
     [handleSelectAnswer]
@@ -41,6 +42,7 @@ export default function Quiz() {
     <div id="quiz">
       <div id="question">
         <QuestionTimer
+          key={activeQuestionIndex}
           timeout={10000}
           onTimeout={handleSkipAnswer}
         />
