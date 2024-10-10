@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function QuestionTimer({ timeout, onTimeout }) {
+export default function QuestionTimer({ timeout, onTimeout, mode }) {
   const [remainingTime, setRemainingTime] = useState(timeout);
   //adding cleanUp function let the progress bar have the full time of 10s because it will execute once and not two time
   useEffect(() => {
@@ -22,5 +22,5 @@ export default function QuestionTimer({ timeout, onTimeout }) {
     };
   }, []);
 
-  return <progress id="question-time" max={timeout} value={remainingTime} />;
+  return <progress id="question-time" max={timeout} value={remainingTime} className={mode}  />;
 }
