@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 
 import QUESTIONS from "../questions";
 import Question from "./Question";
+import Summary from "./Summary";
 
 export default function Quiz() {
 
@@ -24,9 +25,7 @@ export default function Quiz() {
   );
 
   if (quizIsComplete) {
-    return (
-     
-    );
+    return <Summary userAnswers={userAnswers} />
   }
   // Only shuffle answers if the quiz is not complete
   // const shuffledAnswers = [...QUESTIONS[activeQuestionIndex].answers];
